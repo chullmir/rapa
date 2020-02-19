@@ -14,9 +14,14 @@ class PagesController extends Controller
     }
     public function calificar($id){
     	return view('calificar');
-    	// return 'Hola '.$id.', cómo estas?';
     }
     public function enviado(){
     	return view('enviado');
+    }
+    public function resultados(){
+    	return view('resultados');
+    }
+    public function individual($id){
+    	return view('individual');
     }
 }

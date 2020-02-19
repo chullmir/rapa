@@ -13,5 +13,8 @@
 
 Route::get('/','PagesController@index')->name('index');
 Route::get('/evaluar','PagesController@evaluar')->name('evaluar');
-Route::get('/evaluar/{id}','PagesController@calificar')->name('calificar');
+Route::get('/evaluar/{id}','PagesController@calificar');
 Route::get('/enviado','PagesController@enviado')->name('enviado');
+Route::get('/resultados','PagesController@resultados')->name('resultados');
+Route::get('/resultados/{id}','PagesController@individual');
+Route::get('/login','PagesController@login')->name('login');

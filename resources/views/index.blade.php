@@ -3,6 +3,6 @@
 @section('content')
 <div class="menu">
 	<a href="{{route('evaluar')}}">Completar</a>
-	<a href="">Resultados</a>
+	<a href="{{route('resultados')}}">Resultados</a>
 </div>
 @endsection
