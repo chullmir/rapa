@@ -12,3 +12,4 @@
 */
 
 Route::get('/','PagesController@index')->name('index');
+Route::get('/evaluar','PagesController@evaluar')->name('evaluar');
