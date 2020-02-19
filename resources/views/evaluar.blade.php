@@ -14,7 +14,7 @@
 				<td>Nombre Apellido</td>
 				<td>Administración y Finanzas</td>
 				<td>4.0</td>
-				<td><a href=""><i class="fas fa-edit"></i></a></td>
+				<td><a href="/evaluar/11"><i class="fas fa-edit"></i></a></td>
 			</tr>';
 	}
 	?>

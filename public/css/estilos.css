@@ -61,3 +61,72 @@ body h1{
 	color: #fff;
 	padding: 5px;
 }
+/* ---- CALIFICAR ---- */
+.calificar a{
+	display: inline-block;
+	background: #29a370;
+	color: #fff;
+	padding: 5px;
+	margin: 10px;
+	text-decoration: none;
+	font-family: 'Poppins';
+}
+body h2{
+	font-family: 'Poppins';
+	margin-left: 15px;
+}
+.calificar form{
+	margin-left: 15px;
+	font-family: 'Roboto';
+}
+.calificar form .form-group .opciones{
+	display: flex;
+	flex-direction: row;
+}
+.calificar form .anterior .resultado-anterior{
+	font-weight: bold;
+	color: red;
+}
+.calificar form input[type="radio"]{
+	visibility: hidden;
+	height: 0;
+	width: 0;
+}
+.calificar form label{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	background-color: #e3e3e3;
+	color: red;
+	padding: 5px;
+	border-radius: 3px;
+	margin: 5px;
+}
+.calificar form input[type="radio"]:checked + label{
+	background-color: #58ba83;
+}
+.calificar form .submit{
+	background-color: #77aac9;
+	border: none;
+	color: #fff;
+	padding: 10px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+ /*---- ENVIADO ---- */
+ .enviado p{
+ 	font-family: 'Roboto';
+ 	font-size: 30px;
+ }
+ .enviado .botones{
+ 	display: flex;
+ 	flex-direction: column;
+ }
+ .enviado a{
+ 	text-decoration: none;
+	background: #29a370;
+	color: #FFF;
+	margin: 10px auto;
+	padding: 15px;
+ }
