@@ -4,9 +4,9 @@
 <div class="calificar">
 	<a href="{{route('evaluar')}}" id="boton-volver"><i class="fas fa-step-backward"></i> Volver</a>
 	<h1>{{$users->name}} {{$users->lastname}}</h1>
-	<h2>Categoría</h2>
+	<h2>{{$users->sector_evaluado}}</h2>
 
-	<form action="{{route('enviado')}}" method="get">
+	<form action="{{route('enviado')}}" method="post">
 		@csrf
 		<div class="form-group">
 			<p class="pregunta">¿Lorem ipsum dolor sit amet, consectetur?</p>
