@@ -10,16 +10,16 @@
 			<th>Último</th>
 			<th>Completar</th>
 		</tr>
-		<?php for ($i=0; $i < 10; $i++) { 
-			echo '<tr>
-					<td>Nombre Apellido</td>
-					<td>Administración y Finanzas</td>
-					<td>4.0</td>
-					<td><a href="/evaluar/11"><i class="fas fa-edit"></i></a></td>
-				</tr>';
-		}
-		?>
+		@foreach($users as $user)
+		<tr>
+			<td>{{$user->name}} {{$user->lastname}}</td>
+			<td>{{$user->sector_evaluado}}</td>
+			<td>3.1</td>
+			<td><a href="/evaluar/{{$user->id}}"><i class="fas fa-edit"></i></a></td>
+		</tr>
+		@endforeach
 	</table>
+	{{$users->links()}}
 </div>
 
 @endsection

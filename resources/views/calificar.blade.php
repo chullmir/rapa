@@ -3,7 +3,7 @@
 @section('content')
 <div class="calificar">
 	<a href="{{route('evaluar')}}" id="boton-volver"><i class="fas fa-step-backward"></i> Volver</a>
-	<h1>Nombre Apellido</h1>
+	<h1>{{$users->name}} {{$users->lastname}}</h1>
 	<h2>Categoría</h2>
 
 	<form action="{{route('enviado')}}" method="get">

@@ -22,6 +22,8 @@ header .fa-user-circle{
 body{
 	background: #fff7d6;
 }
+ /*---- LOGIN ---- */
+ 
 /* ---- INDEX ---- */
 body .menu{
 	display: flex;
@@ -63,6 +65,37 @@ body h1{
 }
 .listado-evaluados td a:hover, .listado-resultados td a:hover{
 	background: #1f73ab;
+}
+.pagination{
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	margin: 10px auto;
+	justify-content: center;
+
+}
+.pagination .page-item{
+	font-family: 'Roboto';
+	font-size: 0.7em;
+	text-decoration: none;
+	background: #29a370;
+	margin: 5px;
+	padding: 5px;
+}
+.pagination .page-item:hover{
+	background: DodgerBlue;
+}
+.pagination .page-item a{
+	text-decoration: none;
+	color: #fff;
+}
+.pagination .disabled{
+	background: gray;
+	color: #fff;
+}
+.pagination .active{
+	background: DodgerBlue;
+	color: #fff;
 }
 /* ---- CALIFICAR ---- */
 .calificar a{
@@ -134,7 +167,7 @@ body h2{
 	padding: 15px;
  }
 
- .resultado-individual a{
+ .resultado-individual #boton-volver{
 	display: inline-block;
 	background: #29a370;
 	color: #fff;
