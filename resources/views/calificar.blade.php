@@ -5,111 +5,49 @@
 	<a href="{{route('evaluar')}}" id="boton-volver"><i class="fas fa-step-backward"></i> Volver</a>
 	<h1>{{$users->name}} {{$users->lastname}}</h1>
 	<h2>{{$users->sector_evaluado}}</h2>
+	
+	<?php
+	$listadoPreguntas = [
+		$preguntas->pregunta1,
+		$preguntas->pregunta2,
+		$preguntas->pregunta3,
+		$preguntas->pregunta4,
+		$preguntas->pregunta5,
+		$preguntas->pregunta6,
+		$preguntas->pregunta7,
+		$preguntas->pregunta8,
+		$preguntas->pregunta9,
+		$preguntas->pregunta10,
+		$preguntas->pregunta11,
+		$preguntas->pregunta12,
+		$preguntas->pregunta13,
+
+	];
+
+	?>
 
 	<form action="{{route('enviado')}}" method="post">
 		@csrf
-		<div class="form-group">
-			<p class="pregunta">¿Lorem ipsum dolor sit amet, consectetur?</p>
-			<p class="anterior">Anterior: <span class="resultado-anterior">4</span></p>
-			<div class="opciones">
-				<input type="radio" id="preg1-1" name="preg1" value="1">
-				<label for="preg1-1">1</label>
-				<input type="radio" id="preg1-2" name="preg1" value="2">
-				<label for="preg1-2">2</label>
-				<input type="radio" id="preg1-3" name="preg1" value="3">
-				<label for="preg1-3">3</label>
-				<input type="radio" id="preg1-4" name="preg1" value="4">
-				<label for="preg1-4">4</label>
-				<input type="radio" id="preg1-5" name="preg1" value="5">
-				<label for="preg1-5">5</label>
-			</div>	
-		</div>
+		<input type="hidden" name="nombre" value="{{$users->name}} {{$users->lastname}}">
+		
+		<?php $contador = 0 ?>
+		@foreach($listadoPreguntas as $unaPregunta)
+			<?php $contador = $contador + 1 ?>
+			@if(strlen($unaPregunta)>0)
+				
+				<div class="form-group">
+					<p class="pregunta">{{$unaPregunta}}</p>
+					<div class="opciones">
+						@for($i=1;$i<=5;$i++)
+							<input type="radio" id="preg{{$contador}}-{{$i}}" name="preg{{$contador}}" value="{{$i}}">
+							<label for="preg{{$contador}}-{{$i}}">{{$i}}</label>
+						@endfor
+					</div>
+				</div>
+			@endif
+		@endforeach
 
-		<div class="form-group">
-			<p class="pregunta">¿Lorem ipsum dolor sit amet, consectetur?</p>
-			<p class="anterior">Anterior: <span class="resultado-anterior">4</span></p>
-			<div class="opciones">
-				<input type="radio" id="preg1-1" name="preg1" value="1">
-				<label for="preg1-1">1</label>
-				<input type="radio" id="preg1-2" name="preg1" value="2">
-				<label for="preg1-2">2</label>
-				<input type="radio" id="preg1-3" name="preg1" value="3">
-				<label for="preg1-3">3</label>
-				<input type="radio" id="preg1-4" name="preg1" value="4">
-				<label for="preg1-4">4</label>
-				<input type="radio" id="preg1-5" name="preg1" value="5">
-				<label for="preg1-5">5</label>
-			</div>	
-		</div>
-
-		<div class="form-group">
-			<p class="pregunta">¿Lorem ipsum dolor sit amet, consectetur?</p>
-			<p class="anterior">Anterior: <span class="resultado-anterior">4</span></p>
-			<div class="opciones">
-				<input type="radio" id="preg1-1" name="preg1" value="1">
-				<label for="preg1-1">1</label>
-				<input type="radio" id="preg1-2" name="preg1" value="2">
-				<label for="preg1-2">2</label>
-				<input type="radio" id="preg1-3" name="preg1" value="3">
-				<label for="preg1-3">3</label>
-				<input type="radio" id="preg1-4" name="preg1" value="4">
-				<label for="preg1-4">4</label>
-				<input type="radio" id="preg1-5" name="preg1" value="5">
-				<label for="preg1-5">5</label>
-			</div>	
-		</div>
-
-		<div class="form-group">
-			<p class="pregunta">¿Lorem ipsum dolor sit amet, consectetur?</p>
-			<p class="anterior">Anterior: <span class="resultado-anterior">4</span></p>
-			<div class="opciones">
-				<input type="radio" id="preg1-1" name="preg1" value="1">
-				<label for="preg1-1">1</label>
-				<input type="radio" id="preg1-2" name="preg1" value="2">
-				<label for="preg1-2">2</label>
-				<input type="radio" id="preg1-3" name="preg1" value="3">
-				<label for="preg1-3">3</label>
-				<input type="radio" id="preg1-4" name="preg1" value="4">
-				<label for="preg1-4">4</label>
-				<input type="radio" id="preg1-5" name="preg1" value="5">
-				<label for="preg1-5">5</label>
-			</div>	
-		</div>
-
-		<div class="form-group">
-			<p class="pregunta">¿Lorem ipsum dolor sit amet, consectetur?</p>
-			<p class="anterior">Anterior: <span class="resultado-anterior">4</span></p>
-			<div class="opciones">
-				<input type="radio" id="preg1-1" name="preg1" value="1">
-				<label for="preg1-1">1</label>
-				<input type="radio" id="preg1-2" name="preg1" value="2">
-				<label for="preg1-2">2</label>
-				<input type="radio" id="preg1-3" name="preg1" value="3">
-				<label for="preg1-3">3</label>
-				<input type="radio" id="preg1-4" name="preg1" value="4">
-				<label for="preg1-4">4</label>
-				<input type="radio" id="preg1-5" name="preg1" value="5">
-				<label for="preg1-5">5</label>
-			</div>	
-		</div>
-
-		<div class="form-group">
-			<p class="pregunta">¿Lorem ipsum dolor sit amet, consectetur?</p>
-			<p class="anterior">Anterior: <span class="resultado-anterior">4</span></p>
-			<div class="opciones">
-				<input type="radio" id="preg1-1" name="preg1" value="1">
-				<label for="preg1-1">1</label>
-				<input type="radio" id="preg1-2" name="preg1" value="2">
-				<label for="preg1-2">2</label>
-				<input type="radio" id="preg1-3" name="preg1" value="3">
-				<label for="preg1-3">3</label>
-				<input type="radio" id="preg1-4" name="preg1" value="4">
-				<label for="preg1-4">4</label>
-				<input type="radio" id="preg1-5" name="preg1" value="5">
-				<label for="preg1-5">5</label>
-			</div>	
-		</div>
-
+		
 		<input type="submit" value="Enviar" class="submit">
 		
 
