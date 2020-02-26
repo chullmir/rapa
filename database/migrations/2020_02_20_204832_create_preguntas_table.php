@@ -27,6 +27,7 @@ class CreatePreguntasTable extends Migration
             $table->text('pregunta10');
             $table->text('pregunta11');
             $table->text('pregunta12');
+            $table->text('pregunta13');
         });
     }
 
