@@ -40,19 +40,24 @@ class PagesController extends Controller
 		return view('index');
 	}
 	public function evaluar(){
-		$users = User::where('sector_jefe','')->paginate(10);
+		$users = User::where([
+			['sector_jefe',''],
+			['sector_evaluado','Sintesis']
+		])->paginate(10);
 		return view('evaluar')->with(compact('users'));
 	}
 	public function calificar($id){
 		$preguntas = Pregunta::find(1);
 		
 		$users = User::find($id);
-		// echo $sectorPlantilla[$users->sector_evaluado];
 		return view('calificar')->with(compact('users','preguntas'));
 	}
 	
 	public function resultados(){
-		$users = User::where('sector_jefe','')->paginate(10);
+		$users = User::where([
+			['sector_jefe',''],
+			['sector_evaluado','Sintesis']
+		])->paginate(10);
 		return view('resultados')->with(compact('users'));
 	}
 	public function individual($id){
