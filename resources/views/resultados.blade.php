@@ -7,14 +7,12 @@
 		<tr>
 			<th>Nombre</th>
 			<th>Sector</th>
-			<th>Calificación</th>
 			<th>Ver</th>
 		</tr>
 		@foreach($users as $user)
 		<tr>
 			<td>{{$user->name}} {{$user->lastname}}</td>
 			<td>{{$user->sector_evaluado}}</td>
-			<td>N / A</td>
 			<td><a href="/resultados/{{$user->id}}"><i class="fas fa-eye"></i></a></td>
 		</tr>
 		@endforeach

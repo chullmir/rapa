@@ -82,9 +82,19 @@ class PagesController extends Controller
 		$plantilla = $sectorPlantilla[$user->sector_evaluado];
 		$preguntas = Pregunta::find($plantilla);
 
-		$datos = \DB::table('plantilla_unos')->where('evaluadoID',$id)->get();
+		$datos = \DB::table('plantilla_unos')
+			->where([
+				['evaluadoID','=',$id],
+				['mes','=',date('m')]
+			])->get();
 
-		return view('individual')->with(compact('datos','user','preguntas'));
+		$datosAnt = \DB::table('plantilla_unos')
+			->where([
+				['evaluadoID','=',$id],
+				['mes','=',date('m')-1]
+			])->get();
+
+		return view('individual')->with(compact('datos','user','preguntas','datosAnt'));
 	}
 	public function login()
 	{
