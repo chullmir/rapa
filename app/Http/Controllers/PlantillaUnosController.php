@@ -38,6 +38,7 @@ class PlantillaUnosController extends Controller
         $plantilla1 = new PlantillaUno;
         $plantilla1->evaluador = 'Hola';
         $plantilla1->evaluado = $request->nombre;
+        $plantilla1->evaluadoID = $request->evaluadoID;
         $plantilla1->mes = date('m');
         $plantilla1->preg1 = $request->preg1;
         $plantilla1->preg2 = $request->preg2;
@@ -53,7 +54,8 @@ class PlantillaUnosController extends Controller
         $plantilla1->preg12 = $request->preg12;
         $plantilla1->preg13 = $request->preg13;
         $plantilla1->save();
-        return view('enviado')->with(compact('request'));
+        // return view('enviado')->with(compact('request'));
+        return view('enviado');
     }
 
     /**

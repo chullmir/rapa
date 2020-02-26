@@ -18,9 +18,6 @@ Route::post('/enviado','PlantillaUnosController@store')->name('enviado');
 Route::get('/resultados','PagesController@resultados')->name('resultados');
 Route::get('/resultados/{id}','PagesController@individual');
 Route::get('/login','PagesController@login')->name('login');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

@@ -18,6 +18,7 @@ class CreatePlantillaunosTable extends Migration
             $table->timestamps();
             $table->string('evaluador');
             $table->string('evaluado');
+            $table->integer('evaluadoID');
             $table->integer('mes');
             $table->integer('preg1');
             $table->integer('preg2');

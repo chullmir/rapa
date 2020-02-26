@@ -29,6 +29,7 @@
 	<form action="{{route('enviado')}}" method="post">
 		@csrf
 		<input type="hidden" name="nombre" value="{{$users->name}} {{$users->lastname}}">
+		<input type="hidden" name="evaluadoID" value="{{$users->id}}">
 		
 		<?php $contador = 0 ?>
 		@foreach($listadoPreguntas as $unaPregunta)

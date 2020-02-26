@@ -4,9 +4,9 @@
 <div class="enviado">
 	<p>Voto enviado</p>
 	<?php 
-		echo "<pre>";
+		//echo "<pre>";
 
-		echo "</pre>";
+		//echo "</pre>";
 
 	?>
 	<div class="botones">
