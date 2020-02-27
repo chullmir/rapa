@@ -3,8 +3,8 @@
 @section('content')
 <div class="calificar">
 	<a href="{{route('evaluar')}}" id="boton-volver"><i class="fas fa-step-backward"></i> Volver</a>
-	<h1>{{$user->name}} {{$user->lastname}}</h1>
-	<h2>{{$user->sector_evaluado}}</h2>
+	<h1>{{$user->name}}</h1>
+	<h2>Sector: {{$user->sector_evaluado}}</h2>
 	
 	<?php
 	$listadoPreguntas = [
@@ -24,12 +24,14 @@
 
 	];
 
+
 	?>
 
 	<form action="{{route('enviado')}}" method="post">
 		@csrf
 		<input type="hidden" name="nombre" value="{{$user->name}} {{$user->lastname}}">
 		<input type="hidden" name="evaluadoID" value="{{$user->id}}">
+		<input type="hidden" name="idPlantilla" value="{{$idPlantilla}}">
 		
 		<?php $contador = 0 ?>
 		@foreach($listadoPreguntas as $unaPregunta)

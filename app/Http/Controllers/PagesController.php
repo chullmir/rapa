@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\PlantillaUno;
 use App\Pregunta;
+use App\Respuesta;
 
 $sectorPlantilla = [
 			'Arriba'=> 1,
@@ -40,10 +41,11 @@ class PagesController extends Controller
 		return view('index');
 	}
 	public function evaluar(){
+		
 		$users = User::where([
 			['sector_jefe',''],
 			//['sector_evaluado','Mesa']
-		])->paginate(10);
+		])->paginate(300);
 		return view('evaluar')->with(compact('users'));
 	}
 	public function calificar($id){
@@ -71,18 +73,20 @@ class PagesController extends Controller
 			'Mesa'=> 4,
 			'Redactor Web'=> 6
 		];
+
+		$idPlantilla = $sectorPlantilla[$user->sector_evaluado];
 		
 		$preguntas = Pregunta::find($sectorPlantilla[$user->sector_evaluado]);
 		
 		
-		return view('calificar')->with(compact('user','preguntas'));
+		return view('calificar')->with(compact('user','preguntas','idPlantilla'));
 	}
 	
 	public function resultados(){
 		$users = User::where([
 			['sector_jefe',''],
-			['sector_evaluado','Sintesis']
-		])->paginate(10);
+			// ['sector_evaluado','Sintesis']
+		])->paginate(300);
 		return view('resultados')->with(compact('users'));
 	}
 	public function individual($id){
@@ -109,17 +113,15 @@ class PagesController extends Controller
 			'Redactor Web'=> 6
 		];
 		$user = User::find($id);
-		$plantilla = $sectorPlantilla[$user->sector_evaluado];
-		$preguntas = Pregunta::find($plantilla);
+		$idPlantilla = $sectorPlantilla[$user->sector_evaluado];
+		$preguntas = Pregunta::find($idPlantilla);
 
-		$datos = \DB::table('plantilla_unos')
-			->where([
+		$datos = Respuesta::where([
 				['evaluadoID','=',$id],
 				['mes','=',date('m')]
 			])->get();
 
-		$datosAnt = \DB::table('plantilla_unos')
-			->where([
+		$datosAnt = Respuesta::where([
 				['evaluadoID','=',$id],
 				['mes','=',date('m')-1]
 			])->get();

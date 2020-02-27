@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlantillaunosTable extends Migration
+class CreateRespuestasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreatePlantillaunosTable extends Migration
      */
     public function up()
     {
-        Schema::create('plantilla_unos', function (Blueprint $table) {
+        Schema::create('respuestas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('evaluador');
             $table->string('evaluado');
             $table->integer('evaluadoID');
             $table->integer('mes');
+            $table->integer('idPlantilla');
             $table->integer('preg1');
             $table->integer('preg2');
             $table->integer('preg3');
@@ -43,6 +44,6 @@ class CreatePlantillaunosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plantillaunos');
+        Schema::dropIfExists('respuestas');
     }
 }

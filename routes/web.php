@@ -14,7 +14,7 @@
 Route::get('/','PagesController@index')->name('index');
 Route::get('/evaluar','PagesController@evaluar')->name('evaluar');
 Route::get('/evaluar/{id}','PagesController@calificar');
-Route::post('/enviado','PlantillaUnosController@store')->name('enviado');
+Route::post('/enviado','RespuestasController@store')->name('enviado');
 Route::get('/resultados','PagesController@resultados')->name('resultados');
 Route::get('/resultados/{id}','PagesController@individual');
 Route::get('/login','PagesController@login')->name('login');
