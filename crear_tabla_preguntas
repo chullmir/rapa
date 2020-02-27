@@ -1,14 +1,14 @@
 CREATE TABLE IF NOT EXISTS preguntas (
-    `Plantilla` INTEGER,
-    `preg1` VARCHAR(30) CHARACTER SET utf8,
+    `Plantilla` NUMERIC(2, 1),
+    `preg1` VARCHAR(48) CHARACTER SET utf8,
     `preg2` VARCHAR(70) CHARACTER SET utf8,
     `preg3` VARCHAR(80) CHARACTER SET utf8,
     `preg4` VARCHAR(37) CHARACTER SET utf8,
     `preg5` VARCHAR(39) CHARACTER SET utf8,
     `preg6` VARCHAR(50) CHARACTER SET utf8,
     `preg7` VARCHAR(49) CHARACTER SET utf8,
-    `preg8` VARCHAR(39) CHARACTER SET utf8,
-    `preg9` VARCHAR(60) CHARACTER SET utf8,
+    `preg8` VARCHAR(49) CHARACTER SET utf8,
+    `preg9` VARCHAR(83) CHARACTER SET utf8,
     `preg10` VARCHAR(61) CHARACTER SET utf8,
     `preg11` VARCHAR(42) CHARACTER SET utf8,
     `preg12` VARCHAR(57) CHARACTER SET utf8,
@@ -20,4 +20,4 @@ INSERT INTO preguntas VALUES
     (3.0,'¿Es flexible ante los cambios?','¿Muestra predisposición (viaja, reemplazos, ofrece colaboración, etc)?','¿Muestra creatividad?','¿Interactúa y colabora con su equipo?','¿Interactúa y colabora con otras áreas?','¿Se adapta al uso de nuevas tecnologías?','¿Está informado?','¿Trabaja con rapidez y eficacia​?','¿Resuelve creativamente en los pedidos de materiales ?','¿Tiene rapidez y calidad en la ingesta? ¿Carga los metadatos?','¿Es capaz de resolver problemas técnicos​?','¿Tiene un buen c​​onocimiento y uso de sus herramientas​?',NULL),
     (4.0,'¿Es flexible ante los cambios?','¿Muestra predisposición (viaja, reemplazos, ofrece colaboración, etc)?','¿Muestra creatividad?','¿Interactúa y colabora con su equipo?','¿Interactúa y colabora con otras áreas?','¿Se adapta al uso de nuevas tecnologías?','¿Está informado?','¿Trabaja con rapidez y eficacia​?','¿Tiene capacidad y recursos en la resolución de problemas?','¿Tiene un buen c​​onocimiento y uso de sus herramientas​?',NULL,NULL,NULL),
     (5.0,'¿Es flexible ante los cambios?','¿Muestra predisposición y colaboración?','¿Demuestra Autonomía? ¿Tiene capacidad y recursos en la resolución de problemas?','¿Tiene habilidades de liderazgo?','¿Tiene buena comunicación?','¿Se relaciona bien con sus pares y sus superiores?','¿Se relaciona bien con los miembros de su equipo?','¿Tiene buen criterio editorial?','¿Es riguroso?','¿Es creativo?',NULL,NULL,NULL),
-    (6.0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+    (6.0,'¿Reacciona rápido ante los pedidos de un editor?','¿Es proactivo ante situaciones de Breaking News?','¿Interactúa y colabora con el resto del equipo?','¿Tiene recursos narrativos?','¿Utiliza recursos multimedia?','¿Escribe sin errores de tipeo?','¿Escribe sin errores de sintaxis?','¿Rechequea datos / información antes de publicar?','¿Las fuentes o partes involucradas en la noticia están citadas y bien distinguidas?',NULL,NULL,NULL,NULL);
