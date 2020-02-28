@@ -41,7 +41,7 @@ class PagesController extends Controller
 		return view('index');
 	}
 	public function evaluar(){
-		
+
 		$users = User::where([
 			['sector_jefe',''],
 			//['sector_evaluado','Mesa']
@@ -76,7 +76,7 @@ class PagesController extends Controller
 
 		$idPlantilla = $sectorPlantilla[$user->sector_evaluado];
 		
-		$preguntas = Pregunta::find($sectorPlantilla[$user->sector_evaluado]);
+		$preguntas = Pregunta::find($idPlantilla);
 		
 		
 		return view('calificar')->with(compact('user','preguntas','idPlantilla'));

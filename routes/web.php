@@ -22,3 +22,9 @@ Route::get('/login','PagesController@login')->name('login');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
+
+// https://www.youtube.com/watch?v=w3Pn9jAt0o4

@@ -1,12 +1,4 @@
-@extends('layouts.template')
-@section('title','Completar')
-@section('content')
-<div class="calificar">
-	<a href="{{route('evaluar')}}" id="boton-volver"><i class="fas fa-step-backward"></i> Volver</a>
-	<h1>{{$user->name}}</h1>
-	<h2>Sector: {{$user->sector_evaluado}}</h2>
-	
-	<?php
+<?php
 	$listadoPreguntas = [
 		$preguntas->pregunta1,
 		$preguntas->pregunta2,
@@ -21,11 +13,17 @@
 		$preguntas->pregunta11,
 		$preguntas->pregunta12,
 		$preguntas->pregunta13,
-
 	];
-
-
-	?>
+?>
+@extends('layouts.template')
+@section('title','Completar')
+@section('content')
+<div class="calificar">
+	<a href="{{route('evaluar')}}" id="boton-volver"><i class="fas fa-step-backward"></i> Volver</a>
+	<h1>{{$user->name}}</h1>
+	<h2>Sector: {{$user->sector_evaluado}}</h2>
+	
+	
 
 	<form action="{{route('enviado')}}" method="post">
 		@csrf
